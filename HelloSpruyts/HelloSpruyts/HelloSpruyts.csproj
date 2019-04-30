@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{6163F895-EDE2-4F73-9AA4-9CA1F43B6C6D}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelloSpruyts</RootNamespace>
+    <AssemblyName>HelloSpruyts</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>HelloSpruyts_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Thingy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="HelloSpruyts_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\beastmosquito.png" />
+    <Content Include="Assets\beastmosquitothumb.png" />
+    <Content Include="Assets\beatsair.png" />
+    <Content Include="Assets\beatsairthumb.png" />
+    <Content Include="Assets\beatsbeer.jpg" />
+    <Content Include="Assets\beatsbeerthumb.jpg" />
+    <Content Include="Assets\beatsblue.png" />
+    <Content Include="Assets\beatsbluethumb.png" />
+    <Content Include="Assets\beatschief.png" />
+    <Content Include="Assets\beatschiefthumb.png" />
+    <Content Include="Assets\beatsclown.png" />
+    <Content Include="Assets\beatsdaddy.jpg" />
+    <Content Include="Assets\beatsdaddythumb.jpg" />
+    <Content Include="Assets\beatsddt.png" />
+    <Content Include="Assets\beatsddtthumb.png" />
+    <Content Include="Assets\beatsfire2.png" />
+    <Content Include="Assets\beatsfire2thumb.png" />
+    <Content Include="Assets\beatsfork.JPG" />
+    <Content Include="Assets\beatsforkthumb.png" />
+    <Content Include="Assets\beatsfox.png" />
+    <Content Include="Assets\beatsfoxthumb.png" />
+    <Content Include="Assets\beatsfrog.png" />
+    <Content Include="Assets\beatsfrogthumb.png" />
+    <Content Include="Assets\beatshumanity.png" />
+    <Content Include="Assets\beatshumanitythumb.png" />
+    <Content Include="Assets\beatshunter.png" />
+    <Content Include="Assets\beatshunterthumb.png" />
+    <Content Include="Assets\beatsknife.JPG" />
+    <Content Include="Assets\beatsknifethumb.png" />
+    <Content Include="Assets\beatslug2.png" />
+    <Content Include="Assets\beatslugthumb.png" />
+    <Content Include="Assets\beatsmonkey.JPG" />
+    <Content Include="Assets\beatsmonkeythumb.png" />
+    <Content Include="Assets\beatsplants.JPG" />
+    <Content Include="Assets\beatsplants_thumb.JPG" />
+    <Content Include="Assets\beatsred.png" />
+    <Content Include="Assets\beatsredthumb.png" />
+    <Content Include="Assets\beatsrock.JPG" />
+    <Content Include="Assets\beatsrockthumb.png" />
+    <Content Include="Assets\beatsspirits.png" />
+    <Content Include="Assets\beatsspiritsthumb.png" />
+    <Content Include="Assets\beatsspoon.JPG" />
+    <Content Include="Assets\beatsspoonthumb.png" />
+    <Content Include="Assets\beatsssnake.jpg" />
+    <Content Include="Assets\beatsssnakethumb.png" />
+    <Content Include="Assets\beatswater.png" />
+    <Content Include="Assets\beatswaterthumb.png" />
+    <Content Include="Assets\beatswine.JPG" />
+    <Content Include="Assets\beatswinethumb.JPG" />
+    <Content Include="Assets\beatsyellow.png" />
+    <Content Include="Assets\beatsyellowthumb.png" />
+    <Content Include="Assets\beats_animal.JPG" />
+    <Content Include="Assets\beats_animal_thumb.JPG" />
+    <Content Include="Assets\beats_fungi.JPG" />
+    <Content Include="Assets\beats_fungi_thumb.JPG" />
+    <Content Include="Assets\cutspaper.JPG" />
+    <Content Include="Assets\cutspaperthumb.png" />
+    <Content Include="Assets\cutspapper.jpg" />
+    <Content Include="Assets\eatsbanan.jpg" />
+    <Content Include="Assets\eatsbanana.jpg" />
+    <Content Include="Assets\eatsbananathumb.png" />
+    <Content Include="Assets\ic_info_black_24dp.xml" />
+    <Content Include="Assets\ic_launcher.png" />
+    <Content Include="Assets\ic_notifications_black_24dp.xml" />
+    <Content Include="Assets\ic_sync_black_24dp.xml" />
+    <Content Include="Assets\looksafterbaby.png" />
+    <Content Include="Assets\looksafterbabythumb.png" />
+    <Content Include="Assets\oppressesmummy.png" />
+    <Content Include="Assets\oppressesmummythumb.png" />
+    <Content Include="Assets\profilebernie.JPG" />
+    <Content Include="Assets\slipsclown.jpg" />
+    <Content Include="Assets\slipsclownthumb.png" />
+    <Content Include="Assets\smashesscisors.JPG" />
+    <Content Include="Assets\smashesscisorsthumb.png" />
+    <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\wrapsstone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
